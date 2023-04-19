@@ -1,0 +1,161 @@
+.ss-accordion-question {
+    flex-grow: 1;
+    width: 100%;
+
+    .accordion, .accordion-item, .accordion-button {
+        background-color: transparent;
+        border: 0;
+    }
+
+    .accordion-button {
+        padding: 12px 0;
+        font-size: 24px;
+
+        &:focus, &:not(.collapsed) {
+            color: $gray-dark;
+            box-shadow: none;
+        }
+
+        &:after {
+            display: none;
+        }
+
+        &::before {
+            flex-shrink: 0;
+            width: 16px;
+            height: 16px;
+            margin-inline-end: 12px;
+            content: "";
+            @include transition(var(--#{$prefix}accordion-btn-icon-transition));
+        }
+
+        [dir=ltr] &:not(.collapsed):before {
+            transform: rotate(0deg);
+        }
+
+        [dir=ltr] &:before {
+            @include collapse-menu-arrow($svg-brand);
+            transform: rotate(-90deg);
+        }
+
+        [dir=rtl] &:not(.collapsed):before {
+            transform: rotate(0deg);
+        }
+
+        [dir=rtl] &:before {
+            @include collapse-menu-arrow($svg-brand);
+            transform: rotate(90deg);
+        }
+    }
+
+    .accordion-body {
+        color: $gray-light;
+        padding: 12px 32px;
+        font-size: 16px;
+
+        //a {
+        //    font-size: 18px;
+        //    color: $gray-dark;
+        //    padding: 6px 0;
+        //}
+    }
+}
+
+.ss-tabs-container {
+    display: flex;
+    height: 78px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    & .ss-tab-item {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        h5 {
+            color: $gray-light;
+        }
+
+        .ss-tab-icon {
+            width: 21px;
+            height: 21px;
+            margin-inline-end: 8px;
+            background-color: pink;
+
+            &.ss-android {
+                @include android-icon($svg-gray-light);
+            }
+
+            &.ss-iphone {
+                @include apple-icon($svg-gray-light);
+            }
+        }
+
+        &:first-child {
+            padding-inline-end: 18px;
+            padding-bottom: 18px;
+            width: 197px;
+            height: 78px;
+            margin-inline-end: -36px;
+            @include faq-tab-side($svg-bg-body);
+
+            [dir=rtl] & {
+                width: 197px;
+                height: 78px;
+                @include faq-tab-side-rtl($svg-bg-body);
+            }
+        }
+
+        &:not(:first-child) {
+            width: 215px;
+            height: 60px;
+            @include faq-tab-center($svg-bg-body);
+            margin-inline-end: -36px;
+        }
+
+        &.active {
+            width: 197px;
+            height: 78px;
+            @include faq-tab-side($svg-white);
+            z-index: 9;
+
+            [dir=rtl] & {
+                width: 197px;
+                height: 78px;
+                @include faq-tab-side-rtl($svg-white);
+            }
+
+            .ss-tab-title {
+                color: $brand;
+            }
+
+            .ss-tab-icon {
+                &.ss-android {
+                    @include android-icon($svg-brand);
+                }
+
+                &.ss-iphone {
+                    @include apple-icon($svg-brand);
+                }
+            }
+        }
+
+        &.active:not(:first-child) {
+            width: 215px;
+            height: 60px;
+            @include faq-tab-center($svg-white);
+        }
+    }
+}
+
+.ss-tabs-content-container {
+    position: relative;
+    top: -18px;
+    padding: 24px 40px 24px;
+    background-color: $white;
+    border-radius: $BORDER-RADIUS;
+}

@@ -1,0 +1,45 @@
+@import "vars";
+
+$container-max-widths: (
+        sm: 1000px,
+        md: 1000px,
+        lg: 1000px,
+        xl: 1000px,
+        xxl: 1000px
+);
+
+$grid-gutter-width: 2rem;
+
+$spacer: 1rem !default;
+$spacers: (
+        0: 0,
+        1: $spacer * .25,
+        2: $spacer * .5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 2,
+        6: $spacer * 3,
+        7: $spacer * 4,
+);
+$box-shadow: 0 0 1rem rgba($gray-dark, .15);
+$body-color: $gray-dark;
+
+$h1-font-size: 72px;
+$h2-font-size: 60px;
+$h3-font-size: 48px;
+$h4-font-size: 32px;
+$h5-font-size: 20px;
+$h6-font-size: 18px;
+
+$font-family-sans-serif: 'Outfit', 'Noto Sans Hebrew', 'Inter Tight', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$border-radius: 12px;
+$accordion-bg: transparentize(rgba(0, 0, 0, 0), 0);
+$body-bg: $bg-body;
+$blue: $brand;
+$red: $error;
+$secondary: $gray-light;
+$link-color: $brand;
+$link-decoration: none;
+$btn-padding-x: 1rem;
+$enable-rfs: false;
+$tooltip-bg: $gray-medium;

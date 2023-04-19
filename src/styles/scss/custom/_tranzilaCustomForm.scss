@@ -1,0 +1,22 @@
+form#payment_form {
+    .form-control {
+        height: 56px;
+    }
+
+    .ss-custom-form-card-icon-holder {
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        margin: 0 8px;
+        right: 0;
+
+        .ss-custom-form-card-icon {
+            width: 20px;
+            height: auto;
+            margin: 0 16px;
+        }
+    }
+}

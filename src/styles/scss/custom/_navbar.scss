@@ -1,0 +1,193 @@
+.ss-navbar {
+    min-height: $navbar-height;
+    background-color: $bg-navbar !important;
+    border-bottom: 1px solid $navbar-border;
+    padding: 0 32px;
+
+    @include media-breakpoint-down(lg) {
+        padding: 0;
+        border-bottom: 0;
+    }
+
+    .ss-navbar-mobile {
+        .ss-navbar-mobile-header {
+            height: $navbar-height;
+            background-color: $bg-navbar !important;
+            border-bottom: 1px solid $navbar-border;
+            width: '100%';
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+        }
+
+        .navbar-toggler {
+            border-radius: 12px;
+            background-color: $white;
+            border: 0;
+
+            .navbar-toggler-icon {
+                width: 24px;
+                height: 30px;
+                @include navbar-hamburger();
+            }
+
+            &:not(.collapsed) {
+                background-color: $gray-dark;
+
+                .navbar-toggler-icon {
+                    @include navbar-closeX-hamburger();
+                }
+            }
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+
+        .ss-navbar-mobile-body {
+            //padding: 0 16px;
+            background-color: $gray-lighter;
+        }
+
+        .ss-navbar-mobile-footer {
+            height: $navbar-height;
+            background-color: $bg-navbar !important;
+            border-top: 1px solid $navbar-border;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+
+            .ss-signup-btn, .ss-login-btn {
+                margin-inline-start: 8px;
+            }
+
+            .ss-navbar-mobile-footer-cta {
+                text-align: end;
+            }
+        }
+    }
+
+    .ss-navbar-desktop {
+        .nav-item {
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+        .ss-nav-link {
+            color: $gray-light;
+        }
+    }
+
+    .ss-nav-link {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 6px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 12px;
+        padding-right: 12px;
+        color: $gray-light;
+        text-align: start;
+
+        &:hover, &.show {
+            background-color: $white;
+        }
+
+        &.ss-logged-user-avatar {
+            color: $white;
+            background-color: $gray-dark;
+
+            &:hover, &.show {
+                background-color: $gray-medium;
+            }
+        }
+    }
+}
+
+.ss-signup-btn {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    border: 0;
+    margin-inline-start: 16px;
+    background-color: $gray-dark;
+
+    &:hover {
+        background-color: $gray-medium;
+    }
+}
+
+.ss-login-btn, .ss-currency-btn {
+    @extend .ss-signup-btn;
+    background-color: $white;
+
+    &:hover {
+        background-color: $navbar-border;
+    }
+}
+
+.ss-collapsed-container.show {
+    height: calc((var(--vh) * 100) - #{$navbar-height}); // calculation of height for opened collapsed menu on mobile view
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.ss-collapsed-container {
+    &.collapsing {
+        transition: none
+    }
+
+    .ss-collapsed-navmenu {
+        flex-grow: 1;
+        width: 100%;
+        padding-top: 2rem;
+
+        .accordion, .accordion-item, .accordion-button {
+            background-color: transparent;
+            border: 0;
+        }
+
+        .accordion-header {
+            font-weight: 400;
+        }
+
+        .accordion-button {
+            padding: 12px 0;
+            font-size: 18px;
+
+            &:focus, &:not(.collapsed) {
+                color: $gray-dark;
+                box-shadow: none;
+            }
+
+            &:after {
+                @include collapse-menu-arrow();
+            }
+
+            [dir=rtl] &:after {
+                margin-left: 0;
+                margin-right: auto;
+            }
+
+            [dir=ltr] &:after {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+
+        .accordion-body {
+            padding: 0 16px;
+
+            a {
+                font-size: 18px;
+                color: $gray-dark;
+                padding: 6px 0;
+                //font-family: "Varela", "Heebo", sans-serif;
+            }
+        }
+    }
+}

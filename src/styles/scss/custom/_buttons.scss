@@ -1,0 +1,323 @@
+.ss-buttonLinkArrow {
+    $baseColor: $white;
+
+    border-radius: $BORDER-RADIUS;
+    padding: 1px 16px;
+    margin: 0;
+    border: 0;
+    background-color: $brand;
+    justify-content: center;
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        min-height: 56px;
+        border-radius: 28px;
+    }
+
+    &:disabled {
+        &:hover {
+            background-color: $gray-light !important;
+        }
+    }
+
+    &.ss-hardDisabled {
+        background-color: $gray-light !important;
+
+        &:hover {
+            cursor: not-allowed !important;
+        }
+
+        & > .ss-buttonLinkArrow-label {
+            color: $white;
+            cursor: not-allowed !important;
+        }
+
+        & > .ss-arrow-btn {
+            @include arrow-icon($svg-white);
+        }
+    }
+
+    &.ss-invert-color {
+        .ss-buttonLinkArrow-label {
+            color: $baseColor;
+        }
+
+        .ss-arrow-btn {
+            @include arrow-icon($svg-white);
+        }
+    }
+
+    .ss-buttonLinkArrow-label {
+        padding-inline-end: .75rem;
+        line-height: 1.68;
+        font-size: 20px;
+        color: $baseColor;
+        cursor: pointer;
+
+        //& :hover {
+        //    color: $baseColor;
+        //}
+    }
+
+    .ss-arrow-btn {
+        width: 16px;
+        height: 16px;
+        margin-top: 1px;
+
+        @include arrow-icon($svg-white);
+
+        [dir=rtl] & {
+            transform: scale(-1, 1);
+        }
+    }
+
+    &:hover,
+    &.ss-btn-loading-spinner {
+        -webkit-transition: all 0.3s 0s ease;
+        -moz-transition: all 0.3s 0s ease;
+        -o-transition: all 0.3s 0s ease;
+        transition: all 0.3s 0s ease;
+        background-color: $brand-light !important;
+
+        &:focus {
+            -webkit-transition: all 0.3s 0s ease;
+            -moz-transition: all 0.3s 0s ease;
+            -o-transition: all 0.3s 0s ease;
+            transition: all 0.3s 0s ease;
+            background-color: $brand-dark !important;
+        }
+
+        .ss-buttonLinkArrow-label {
+            color: $baseColor !important;
+        }
+
+        .ss-arrow-btn {
+            [dir=rtl] & {
+                transform: scale(-1, 1);
+            }
+        }
+    }
+}
+
+.ss-buttonLinkArrow_v1 {
+    $baseColor: $white;
+
+    border-radius: $BORDER-RADIUS;
+    padding: 1px 16px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin: 0 -16px;
+    border: 0;
+    background-color: transparent;
+
+    &:disabled {
+        &:hover {
+            background-color: $gray-light !important;
+        }
+    }
+
+    &.ss-hardDisabled {
+        background-color: $gray-light !important;
+
+        &:hover {
+            cursor: not-allowed !important;
+        }
+
+        & > .ss-buttonLinkArrow-label {
+            color: $white;
+            cursor: not-allowed !important;
+        }
+
+        & > .ss-arrow-btn {
+            @include arrow-icon($svg-white);
+        }
+    }
+
+    &.ss-invert-color {
+        .ss-buttonLinkArrow-label {
+            color: $baseColor;
+        }
+
+        .ss-arrow-btn {
+            @include arrow-icon($svg-white);
+        }
+    }
+
+    .ss-buttonLinkArrow-label {
+        padding-inline-end: .75rem;
+        line-height: 1.68;
+        font-size: 20px;
+        color: $brand;
+        cursor: pointer;
+
+        & :hover {
+            color: $baseColor;
+        }
+    }
+
+    .ss-arrow-btn {
+        width: 16px;
+        height: 16px;
+        margin-top: 1px;
+
+        @include arrow-icon($svg-brand);
+
+        [dir=rtl] & {
+            transform: scale(-1, 1);
+        }
+    }
+
+    &.ss-btn-loading-spinner, &:hover {
+        -webkit-transition: all 0.3s 0s ease;
+        -moz-transition: all 0.3s 0s ease;
+        -o-transition: all 0.3s 0s ease;
+        transition: all 0.3s 0s ease;
+        background-color: $brand !important;
+
+        &:focus {
+            -webkit-transition: all 0.3s 0s ease;
+            -moz-transition: all 0.3s 0s ease;
+            -o-transition: all 0.3s 0s ease;
+            transition: all 0.3s 0s ease;
+            background-color: $brand-dark !important;
+        }
+
+        .ss-buttonLinkArrow-label {
+            color: $baseColor !important;
+        }
+
+        .ss-arrow-btn {
+            //-webkit-transition: all 0.3s 0s ease;
+            //-moz-transition: all 0.3s 0s ease;
+            //-o-transition: all 0.3s 0s ease;
+            //transition: all 0.3s 0s ease;
+            @include arrow-icon($svg-white);
+
+            [dir=rtl] & {
+                transform: scale(-1, 1);
+            }
+        }
+    }
+}
+
+.ss-button-rounded {
+    border-radius: 8px;
+    padding: 6px 16px;
+    margin: 0;
+    border: 0;
+    justify-content: center;
+    background-color: $black;
+
+    p {
+        color: $white;
+        margin: 0;
+    }
+}
+
+.ss-faq-subcat-button {
+    border-radius: $BORDER-RADIUS;
+    padding: 18px 24px;
+    min-width: 180px;
+    margin: 0;
+    border: 0;
+    justify-content: center;
+    background-color: $white;
+    border: 1px solid $gray-light;
+    cursor: pointer;
+
+    &.active {
+        border: 1px solid $brand;
+        cursor: default;
+
+        p {
+            color: $brand;
+        }
+
+        &:hover {
+            border: 1px solid $brand;
+
+            p {
+                color: $brand;
+            }
+
+        }
+    }
+
+    &:hover {
+        border: 1px solid $brand-light;
+
+        p {
+            color: $brand-light;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        color: $gray-light;
+        margin: 0;
+        text-align: center;
+
+    }
+}
+
+.ss-scroll-to-top-btn {
+    position: relative;
+    z-index: 9999;
+
+    .icon-position {
+        position: fixed;
+        bottom: 50%;
+        right: 16px;
+        z-index: 20;
+    }
+
+    .icon-style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $gray-dark;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        //animation: movebtn 3s ease-in-out infinite;
+        transition: all .3s ease-in-out;
+    }
+
+    .ss-icon-svg {
+        transform: rotate(-90deg);
+        @include arrow-icon($svg-white);
+        width: 16px;
+        height: 16px;
+    }
+
+    .icon-style:hover {
+        animation: none;
+        background: $white;
+        color: $brand;
+        -webkit-box-shadow: 0 0 20px rgba(0, 126, 252, .6) !important;
+        box-shadow: 0 0 10px rgba(0, 126, 252, .6) !important;
+
+        .ss-icon-svg {
+            @include arrow-icon($svg-brand);
+        }
+    }
+
+    @keyframes movebtn {
+        0% {
+            transform: translateY(5px);
+        }
+        //25% {
+        //    transform: translateY(5px);
+        //}
+        50% {
+            transform: translateY(0px);
+        }
+        //75% {
+        //    transform: translateY(-5px);
+        //}
+        100% {
+            transform: translateY(5px);
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.ss-simpleDropDownSwitcher {
+    //margin-inline-start: 16px;
+
+    .dropdown-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    a.ss-language-item {
+        & > img {
+            border: .2px solid $footer-text;
+            border-radius: 50%;
+        }
+    }
+
+    &.ss-currency-list-holder {
+        .dropdown-menu {
+            width: 140px !important;
+        }
+    }
+}
