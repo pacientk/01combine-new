@@ -1,0 +1,50 @@
+div.cc-background-image {
+    background-image: url($img-dir + 'bg_top_image_02.png');
+    background-position: top 0 right -700px;
+    background-repeat: no-repeat;
+    background-size: inherit;
+
+    @include media-breakpoint-down(xxl) {
+        background-position: top 0 right -900px;
+    }
+    @include media-breakpoint-down(xl) {
+        background-position: top 0 right -1100px;
+    }
+    @include media-breakpoint-down(lg) {
+        background-position: top -300 right -1250px;
+    }
+    @include media-breakpoint-down(md) {
+        background-position: top 0 right -900px;
+    }
+
+    .navbar {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+
+        .nav-item .nav-link {
+            padding-top: 12px;
+            padding-inline-end: 48px;
+        }
+    }
+}
+
+.cc-main-banner-container {
+    margin-top: 190px;
+    //margin-inline-start: 0px;
+
+    h1 {
+        font-size: 80px;
+        line-height: 1;
+        letter-spacing: 2;
+
+        @include media-breakpoint-down(xl) {
+            font-size: 70px;
+        }
+        @include media-breakpoint-down(lg) {
+            font-size: 55px;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 70px;
+        }
+    }
+}

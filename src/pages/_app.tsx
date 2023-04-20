@@ -1,8 +1,13 @@
 // import '@/styles/globals.css';
-import '@/styles/scss/bootstrap/bootstrap.scss';
-import '@/styles/scss/custom/custom.scss';
+import '@/assets/scss/bootstrap/bootstrap.scss';
+import '@/assets/scss/custom/custom.scss';
 import type { AppProps } from 'next/app';
+import LayoutMain from '@/components/LayoutMain/LayoutMain';
 
 export default function App({ Component, pageProps }: AppProps) {
-   return <Component {...pageProps} />;
+   return (
+      <LayoutMain>
+         <Component {...pageProps} />
+      </LayoutMain>
+   );
 }

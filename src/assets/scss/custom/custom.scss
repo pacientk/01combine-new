@@ -1,9 +1,11 @@
 @import '../bootstrap/functions';
 @import '../bootstrap/variables';
 @import '../bootstrap/mixins';
-@import "vars";
+@import 'globals';
+@import "vars.module";
 @import "settings";
-@import "content";
+@import "navbar";
+@import "homeScreen";
 //@import "mixins";
 //@import "modal";
 //@import "navbar";
