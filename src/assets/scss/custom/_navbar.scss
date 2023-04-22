@@ -1,13 +1,5 @@
 .cc-navbar-bg {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    z-index: 3000;
     transition: background .3s ease, box-shadow .3s ease;
-    box-shadow: inset 0 -1px 0 0 var(--accents-2);
-    transform: translateZ(0);
     -webkit-backdrop-filter: saturate(180%) blur(5px);
     backdrop-filter: saturate(180%) blur(5px);
     background: hsla(0, 0%, 100%, .6);

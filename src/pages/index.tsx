@@ -3,7 +3,7 @@ import vars from '@/assets/scss/custom/_vars.module.scss';
 export default function Home() {
 
    return (
-      <div className={'container-fluid cc-background-image'}>
+      <div id={'homeScreen'} className={'container-fluid cc-background-image'}>
          <div className={'container'} style={{ height: 1300, paddingTop: 64 }}>
             <div className={'row'}>
                <div className={'col-7 cc-main-banner-container'}>
